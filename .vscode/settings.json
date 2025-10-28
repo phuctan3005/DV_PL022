@@ -1,0 +1,21 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+
+    // Tắt gợi ý tự động
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+
+    // Tắt hint tham số
+    "editor.parameterHints.enabled": false,
+    // Tắt code lens (các dòng gợi ý hành động phía trên hàm/class)
+    "editor.codeLens": false,
+    "editor.snippetSuggestions": "none",
+    // xóa dòng "editor.inlineSuggest.enabled": false, nếu cần
+    "editor.inlineSuggest.enabled": false,
+    // Tắt hover popup
+    "editor.hover.enabled": false
+}

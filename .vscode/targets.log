@@ -1,0 +1,336 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.82
+# Built for i686-pc-mingw32
+# Copyright (C) 2010  Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Tue Oct 28 15:31:34 2025
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+EFC_10880_2775293581 = 1
+# default
+.SHELLFLAGS := -c
+# environment
+VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+EFC_10880_1262719628 = 1
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+HOMEDRIVE = C:
+# automatic
+@F = $(notdir $@)
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile
+CURDIR := e:/FPT/GITLAB_FPT/PROJECT_FPT/PL022_SPI
+# default
+SHELL := sh.exe
+# environment
+WINDIR = C:\WINDOWS
+# environment
+VSCODE_NLS_CONFIG = {"userLocale":"en-us","osLocale":"vi","resolvedLanguage":"en","defaultMessagesFile":"E:\\FPT\\VISUAL_STUDIO\\Microsoft VS Code\\resources\\app\\out\\nls.messages.json","locale":"en-us","availableLanguages":{}}
+# environment
+ONEDRIVE = E:\One_Drive\OneDrive - VNU-HCMUS
+# environment
+QSYS_ROOTDIR = E:\components\FPGA\quartus\sopc_builder\bin
+# environment
+VSCODE_PID = 20864
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+# makefile
+MAKEFILE_LIST := 
+# environment
+FPS_BROWSER_USER_PROFILE_STRING = Default
+# environment
+TMP = C:\Users\zztan\AppData\Local\Temp
+# environment
+PROGRAMW6432 = C:\Program Files
+# environment
+PROGRAMDATA = C:\ProgramData
+# environment
+VSCODE_CWD = E:\FPT\VISUAL_STUDIO\Microsoft VS Code
+# environment
+PATH = C:\Python314\Scripts\;C:\Python314\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Users\zztan\Downloads\ffmpeg-2025-09-04-git-2611874a50-full_build\ffmpeg-2025-09-04-git-2611874a50-full_build\bin;E:\MATLAB\runtime\win64;E:\MATLAB\bin;E:\FPT\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;E:\TRANSLATE\;C:\ProgramData\chocolatey\bin;E:\Arm_GNU\14.3 rel1\bin;E:\AI_ONCHAIN\Scripts\;E:\AI_ONCHAIN\;C:\Users\zztan\AppData\Local\Microsoft\WindowsApps;E:\components\modelsim_ase\win32aloem;E:\RISCV_COMPILER\SysGCC\bin;E:\FPT\QuestaSim 10.2c\win64;E:\FPT\QuestaSim 10.2c\QuestaSim 10.2c\SET_TING\win64;E:\FPT\QuestaSim 10.2c\QuestaSim 10.2c\SETING\win64;E:\FPT\VISUAL_STUDIO\Microsoft VS Code\bin;C:\Users\zztan\AppData\Roaming\npm
+# environment
+LM_LICENSE_FILE = E:\FPT\QUESTA\win64\LICENSE.dat
+# environment
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# environment
+ZES_ENABLE_SYSMAN = 1
+# environment
+CHOCOLATEYLASTPATHUPDATE = 134057439673479331
+# environment
+PROCESSOR_ARCHITECTURE = x86
+# environment
+USERPROFILE = C:\Users\zztan
+# environment
+CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
+# environment
+ALLUSERSPROFILE = C:\ProgramData
+# environment
+SOPC_KIT_NIOS2 = C:\intelFPGA_standard\24.1std\nios2eds
+# environment
+NUMBER_OF_PROCESSORS = 12
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine archives
+# automatic
+%F = $(notdir $%)
+# environment
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_20864_MKRXBWTXLOYSTEYE
+# environment
+COMPUTERNAME = MSI
+# environment
+PROGRAMFILES = C:\Program Files (x86)
+# environment
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+USERNAME = zztan
+# environment
+PUBLIC = C:\Users\Public
+# environment
+RISCV = E:\RISCV_COMPILER\riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-w64-mingw32\riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-w64-mingw32\bin
+# environment
+VSCODE_CODE_CACHE_PATH = C:\Users\zztan\AppData\Roaming\Code\CachedData\7d842fb85a0275a4a8e4d7e040d2625abbf7f084
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+# environment
+LOGONSERVER = \\MSI
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+USERDOMAIN = MSI
+# environment
+UVM_HOME = E:\FPT\QUESTA\verilog_src\uvm_1_1d\src
+# environment
+MAKELEVEL := 0
+# environment
+STM32CUBEMX_PATH = C:\Program Files\STMicroelectronics\STM32Cube\STM32CubeMX
+# default
+MAKECMDGOALS := all
+# environment
+EFC_10880_2283032206 = 1
+# environment
+VSCODE_ESM_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+ONEDRIVECOMMERCIAL = E:\One_Drive\OneDrive - VNU-HCMUS
+# default
+MAKE_VERSION := 3.82
+# makefile
+.DEFAULT_GOAL := 
+# environment
+APPLICATION_INSIGHTS_NO_STATSBEAT = true
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LOCALAPPDATA = C:\Users\zztan\AppData\Local
+# environment
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files\SharePoint Online Management Shell\
+# default
+MAKE_COMMAND := make.exe
+# environment
+PROCESSOR_ARCHITEW6432 = AMD64
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+EFC_10880_3789132940 = 1
+# environment
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
+# environment
+OS = Windows_NT
+# environment
+VSCODE_IPC_HOOK = \\.\pipe\6c54fdf8-1.105.1-main-sock
+# environment
+HOMEPATH = \Users\zztan
+# environment
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# environment
+PROMPT = $P$G
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+SYSTEMROOT = C:\WINDOWS
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+EFC_10880_1592913036 = 1
+# automatic
++F = $(notdir $+)
+# environment
+APPDATA = C:\Users\zztan\AppData\Roaming
+# environment
+TEMP = C:\Users\zztan\AppData\Local\Temp
+# environment
+COMSPEC = C:\WINDOWS\system32\cmd.exe
+# default
+MAKEFILES := 
+# environment
+QUARTUS_ROOTDIR = C:\intelFPGA_standard\24.1std\quartus
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# environment
+CONFIGSETROOT = C:\WINDOWS\ConfigSetRoot
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+SYSTEMDRIVE = C:
+# environment
+SESSIONNAME = Console
+# environment
+PROCESSOR_REVISION = a502
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+PROCESSOR_LEVEL = 6
+# environment
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+# environment
+APPLICATIONINSIGHTS_CONFIGURATION_CONTENT = {}
+# environment
+USERDOMAIN_ROAMINGPROFILE = MSI
+# variable set hash-table stats:
+# Load=105/1024=10%, Rehash=0, Collisions=13/120=11%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# \Program Files\Microsoft SQL Server\150\Tools\Binn\;C: could not be stat'd.
+# \Program Files (x86)\NVIDIA Corporation\PhysX\Common;C: could not be stat'd.
+# \MATLAB\bin;E: could not be stat'd.
+# \Arm_GNU\14.3 rel1\bin;E: could not be stat'd.
+# \Windows\System32\OpenSSH\;C: could not be stat'd.
+# \FPT\QuestaSim 10.2c\QuestaSim 10.2c\SET_TING\win64;E: could not be stat'd.
+# \FPT\QuestaSim 10.2c\QuestaSim 10.2c\SETING\win64;E: could not be stat'd.
+# . (key e:/FPT/GITLAB_FPT/PROJECT_FPT/PL022_SPI, mtime 1761234423): 8 files, no impossibilities.
+# \Windows;C: could not be stat'd.
+# \WINDOWS\System32\Wbem;C: could not be stat'd.
+# C: could not be stat'd.
+# \Users\zztan\AppData\Roaming\npm: could not be stat'd.
+# \Windows\System32\Wbem;C: could not be stat'd.
+# \Users\zztan\Downloads\ffmpeg-2025-09-04-git-2611874a50-full_build\ffmpeg-2025-09-04-git-2611874a50-full_build\bin;E: could not be stat'd.
+# \AI_ONCHAIN\Scripts\;E: could not be stat'd.
+# \TRANSLATE\;C: could not be stat'd.
+# \RISCV_COMPILER\SysGCC\bin;E: could not be stat'd.
+# \WINDOWS\System32\WindowsPowerShell\v1.0\;C: could not be stat'd.
+# \bin;C: could not be stat'd.
+# \Users\zztan\AppData\Local\Microsoft\WindowsApps;E: could not be stat'd.
+# \FPT\Git\cmd;C: could not be stat'd.
+# \WINDOWS\System32\OpenSSH\;C: could not be stat'd.
+# \components\modelsim_ase\win32aloem;E: could not be stat'd.
+# \FPT\VISUAL_STUDIO\Microsoft VS Code\bin;C: could not be stat'd.
+# \FPT\QuestaSim 10.2c\win64;E: could not be stat'd.
+# \WINDOWS\system32;C: could not be stat'd.
+# \Windows\system32;C: could not be stat'd.
+# \ProgramData\chocolatey\bin;E: could not be stat'd.
+# \Program Files\Docker\Docker\resources\bin;E: could not be stat'd.
+# \AI_ONCHAIN\;C: could not be stat'd.
+# \Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C: could not be stat'd.
+# \Windows\System32\WindowsPowerShell\v1.0\;C: could not be stat'd.
+# \WINDOWS;C: could not be stat'd.
+# \Python314\;C: could not be stat'd.
+# \Python314\Scripts\;C: could not be stat'd.
+# \MATLAB\runtime\win64;E: could not be stat'd.
+
+# 8 files, no impossibilities in 36 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+GNUmakefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+# files hash-table stats:
+# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 0 / lookups = 51 / hits = 51
+# # of strcache buffers: 1 (* 8176 B/buffer = 8176 B)
+# strcache used: total = 0 (1208) / max = 0 / min = 8176 / avg = 0
+# strcache free: total = 0 (6968) / max = 0 / min = 8176 / avg = 0
+
+# strcache hash-table stats:
+# Load=49/8192=1%, Rehash=0, Collisions=1/51=2%
+# Finished Make data base on Tue Oct 28 15:31:34 2025
+
+ 
+make.exe: *** No rule to make target `all'.  Stop.
+

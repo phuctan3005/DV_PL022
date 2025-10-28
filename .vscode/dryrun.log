@@ -1,0 +1,6 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make.exe: Entering directory `e:/FPT/GITLAB_FPT/PROJECT_FPT/PL022_SPI'
+make.exe: Leaving directory `e:/FPT/GITLAB_FPT/PROJECT_FPT/PL022_SPI'
+ 
+make.exe: *** No targets specified and no makefile found.  Stop.
+
