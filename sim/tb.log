@@ -1,0 +1,988 @@
+# vsim +tb +UVM_VERBOSITY= -L uvm_lib -assertdebug -do {log -r /*; run -all;} -l tb.log -debugDB -voptargs=+acc -c -sv_seed 1 tb 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# ** Note: (vsim-8611) Generating debug db.
+# 
+# ** Warning: ../SSP_sequences/default_value_seq.sv(10): (vopt-2239) Treating stand-alone use of presumed external function as an implicit VOID cast.
+# 
+# ** Warning: ../SSP_sequences/read_write_value_seq.sv(13): (vopt-2239) Treating stand-alone use of presumed external function as an implicit VOID cast.
+# 
+# ** Warning: ../SSP_sequences/read_write_value_seq.sv(25): (vopt-2239) Treating stand-alone use of presumed external function as an implicit VOID cast.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2685) [TFMPC] - Too few port connections for 'dut_reg'.  Expected 18, found 8.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPMIS'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPRIS'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPDMACR'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPIMSC'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPCPSR'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPDR'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPCR1'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPCR0'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'intr_raw_in'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'ssp_status'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2685) [TFMPC] - Too few port connections for 'dut_reg'.  Expected 18, found 8.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPMIS'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPRIS'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPDMACR'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPIMSC'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPCPSR'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPDR'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPCR1'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'SSPCR0'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'intr_raw_in'.
+# 
+# ** Warning: ../tb/tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'ssp_status'.
+# 
+# ** Warning: ../SSP_sequences/default_value_seq.sv(10): (vopt-2239) Treating stand-alone use of presumed external function as an implicit VOID cast.
+# 
+# ** Warning: ../SSP_sequences/read_write_value_seq.sv(13): (vopt-2239) Treating stand-alone use of presumed external function as an implicit VOID cast.
+# 
+# ** Warning: ../SSP_sequences/read_write_value_seq.sv(25): (vopt-2239) Treating stand-alone use of presumed external function as an implicit VOID cast.
+# 
+# //  Questa Sim-64
+# //  Version 10.2c Unknown Platform Jul 19 2013
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading sv_std.std
+# Loading mtiUvm.uvm_pkg
+# Loading work.ssp_pkg(fast)
+# Loading work.seq_pkg(fast)
+# Loading work.test_pkg(fast)
+# Loading work.tb_sv_unit(fast)
+# Loading work.tb(fast)
+# Loading work.ssp_if(fast)
+# Loading work.ssp_register(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# ** Warning: (vsim-3017) ../tb/tb.sv(19): [TFMPC] - Too few port connections. Expected 18, found 8.
+# 
+#         Region: /tb/dut_reg
+# ** Warning: (vsim-3722) ../tb/tb.sv(19): [TFMPC] - Missing connection for port 'ssp_status'.
+# 
+# ** Warning: (vsim-3722) ../tb/tb.sv(19): [TFMPC] - Missing connection for port 'intr_raw_in'.
+# 
+# ** Warning: (vsim-3722) ../tb/tb.sv(19): [TFMPC] - Missing connection for port 'SSPCR0'.
+# 
+# ** Warning: (vsim-3722) ../tb/tb.sv(19): [TFMPC] - Missing connection for port 'SSPCR1'.
+# 
+# ** Warning: (vsim-3722) ../tb/tb.sv(19): [TFMPC] - Missing connection for port 'SSPDR'.
+# 
+# ** Warning: (vsim-3722) ../tb/tb.sv(19): [TFMPC] - Missing connection for port 'SSPCPSR'.
+# 
+# ** Warning: (vsim-3722) ../tb/tb.sv(19): [TFMPC] - Missing connection for port 'SSPIMSC'.
+# 
+# ** Warning: (vsim-3722) ../tb/tb.sv(19): [TFMPC] - Missing connection for port 'SSPDMACR'.
+# 
+# ** Warning: (vsim-3722) ../tb/tb.sv(19): [TFMPC] - Missing connection for port 'SSPRIS'.
+# 
+# ** Warning: (vsim-3722) ../tb/tb.sv(19): [TFMPC] - Missing connection for port 'SSPMIS'.
+# 
+# Loading E:/FPT/QUESTA/uvm-1.1d\win64\uvm_dpi.dll
+# ** Note: (vsim-8716) Reusing existing debug database vsim.dbg.
+# 
+# log -r /* 
+#  run -all 
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_WARNING @ 0: reporter [ILLVERB] Illegal verbosity value, using default of UVM_MEDIUM.
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.2
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(217) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test read_write_value_test...
+# UVM_INFO ../SSP_VIP/ssp_agent.sv(18) @ 0: uvm_test_top.ssp_env.agt [ssp_agent] Active agent is configued
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               read_write_value_test   -     @462 
+#   ssp_env                  ssp_environment         -     @471 
+#     agt                    ssp_agent               -     @490 
+#       ssp_drv              ssp_driver              -     @625 
+#         rsp_port           uvm_analysis_port       -     @642 
+#         seq_item_port      uvm_seq_item_pull_port  -     @633 
+#       ssp_mon              ssp_monitor             -     @651 
+#         monitor_port       uvm_analysis_port       -     @663 
+#       ssp_seq              ssp_sequencer           -     @502 
+#         rsp_export         uvm_analysis_export     -     @510 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @616 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     scb                    ssp_scoreboard          -     @482 
+#       scoreboard_export    uvm_analysis_imp        -     @678 
+# --------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(18) @ 30001: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @694                                             
+#   r_w                          transfer         1     WRITE                                            
+#   addr                         integral         12    'h0                                              
+#   data                         integral         16    'h3524                                           
+#   begin_time                   time             64    30001                                            
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 70001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @722  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h0   
+#   data  integral         16    'h3524
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 70001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @722  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h0   
+#   data  integral         16    'h3524
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(30) @ 90000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @735                                             
+#   r_w                          transfer         1     READ                                             
+#   addr                         integral         12    'h0                                              
+#   data                         integral         16    'h6792                                           
+#   begin_time                   time             64    90000                                            
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 110001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @726  
+#   r_w   transfer         1     READ  
+#   addr  integral         12    'h0   
+#   data  integral         16    'h3524
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 110001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @726  
+#   r_w   transfer         1     READ  
+#   addr  integral         12    'h0   
+#   data  integral         16    'h3524
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(36) @ 150000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] read_write_value_pass
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(18) @ 150000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @747                                             
+#   r_w                          transfer         1     WRITE                                            
+#   addr                         integral         12    'h4                                              
+#   data                         integral         16    'h5e81                                           
+#   begin_time                   time             64    150000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 150001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @739 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 150001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @739 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 190001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @751  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h4   
+#   data  integral         16    'h5e81
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 190001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @751  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h4   
+#   data  integral         16    'h5e81
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(30) @ 210000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @763                                             
+#   r_w                          transfer         1     READ                                             
+#   addr                         integral         12    'h4                                              
+#   data                         integral         16    'hb0e0                                           
+#   begin_time                   time             64    210000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 230001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @755 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 230001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @755 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_ERROR ../SSP_sequences/read_write_value_seq.sv(34) @ 270000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] At address: 16'h4 expected value: 16'h5e81 actual: 16'h0
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(18) @ 270000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @775                                             
+#   r_w                          transfer         1     WRITE                                            
+#   addr                         integral         12    'h8                                              
+#   data                         integral         16    'hd609                                           
+#   begin_time                   time             64    270000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 270001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @767 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h4  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 270001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @767 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h4  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 310001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @779  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h8   
+#   data  integral         16    'hd609
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 310001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @779  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h8   
+#   data  integral         16    'hd609
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(30) @ 330000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @791                                             
+#   r_w                          transfer         1     READ                                             
+#   addr                         integral         12    'h8                                              
+#   data                         integral         16    'h2287                                           
+#   begin_time                   time             64    330000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 350001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @783 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 350001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @783 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_ERROR ../SSP_sequences/read_write_value_seq.sv(34) @ 390000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] At address: 16'h8 expected value: 16'hd609 actual: 16'h0
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(18) @ 390000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @803                                             
+#   r_w                          transfer         1     WRITE                                            
+#   addr                         integral         12    'hc                                              
+#   data                         integral         16    'h5663                                           
+#   begin_time                   time             64    390000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 390001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @795 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h8  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 390001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @795 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h8  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 430001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @807  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'hc   
+#   data  integral         16    'h5663
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 430001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @807  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'hc   
+#   data  integral         16    'h5663
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(30) @ 450000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @819                                             
+#   r_w                          transfer         1     READ                                             
+#   addr                         integral         12    'hc                                              
+#   data                         integral         16    'h7a6a                                           
+#   begin_time                   time             64    450000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 470001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @811 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 470001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @811 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_ERROR ../SSP_sequences/read_write_value_seq.sv(34) @ 510000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] At address: 16'hc expected value: 16'h5663 actual: 16'h0
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(18) @ 510000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @831                                             
+#   r_w                          transfer         1     WRITE                                            
+#   addr                         integral         12    'h10                                             
+#   data                         integral         16    'h7b0d                                           
+#   begin_time                   time             64    510000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 510001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @823 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'hc  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 510001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @823 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'hc  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 550001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @835  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h10  
+#   data  integral         16    'h7b0d
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 550001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @835  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h10  
+#   data  integral         16    'h7b0d
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(30) @ 570000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @847                                             
+#   r_w                          transfer         1     READ                                             
+#   addr                         integral         12    'h10                                             
+#   data                         integral         16    'hae62                                           
+#   begin_time                   time             64    570000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 590001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @839 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 590001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @839 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_ERROR ../SSP_sequences/read_write_value_seq.sv(34) @ 630000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] At address: 16'h10 expected value: 16'h7b0d actual: 16'h0
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(18) @ 630000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @859                                             
+#   r_w                          transfer         1     WRITE                                            
+#   addr                         integral         12    'h14                                             
+#   data                         integral         16    'h998d                                           
+#   begin_time                   time             64    630000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 630001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @851 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h10 
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 630001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @851 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h10 
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 670001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @863  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h14  
+#   data  integral         16    'h998d
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 670001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @863  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h14  
+#   data  integral         16    'h998d
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(30) @ 690000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @875                                             
+#   r_w                          transfer         1     READ                                             
+#   addr                         integral         12    'h14                                             
+#   data                         integral         16    'h461c                                           
+#   begin_time                   time             64    690000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 710001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @867 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 710001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @867 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_ERROR ../SSP_sequences/read_write_value_seq.sv(34) @ 750000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] At address: 16'h14 expected value: 16'h998d actual: 16'h0
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(18) @ 750000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @887                                             
+#   r_w                          transfer         1     WRITE                                            
+#   addr                         integral         12    'h18                                             
+#   data                         integral         16    'h8465                                           
+#   begin_time                   time             64    750000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 750001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @879 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h14 
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 750001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @879 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h14 
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 790001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @891  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h18  
+#   data  integral         16    'h8465
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 790001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @891  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h18  
+#   data  integral         16    'h8465
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(30) @ 810000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @903                                             
+#   r_w                          transfer         1     READ                                             
+#   addr                         integral         12    'h18                                             
+#   data                         integral         16    'had5d                                           
+#   begin_time                   time             64    810000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 830001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @895 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 830001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @895 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_ERROR ../SSP_sequences/read_write_value_seq.sv(34) @ 870000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] At address: 16'h18 expected value: 16'h8465 actual: 16'h0
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(18) @ 870000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @915                                             
+#   r_w                          transfer         1     WRITE                                            
+#   addr                         integral         12    'h1c                                             
+#   data                         integral         16    'h5212                                           
+#   begin_time                   time             64    870000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 870001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @907 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h18 
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 870001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @907 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h18 
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 910001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @919  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h1c  
+#   data  integral         16    'h5212
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 910001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @919  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h1c  
+#   data  integral         16    'h5212
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(30) @ 930000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @931                                             
+#   r_w                          transfer         1     READ                                             
+#   addr                         integral         12    'h1c                                             
+#   data                         integral         16    'h1ae                                            
+#   begin_time                   time             64    930000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 950001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @923 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 950001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @923 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_ERROR ../SSP_sequences/read_write_value_seq.sv(34) @ 990000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] At address: 16'h1c expected value: 16'h5212 actual: 16'h0
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(18) @ 990000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @943                                             
+#   r_w                          transfer         1     WRITE                                            
+#   addr                         integral         12    'h20                                             
+#   data                         integral         16    'he301                                           
+#   begin_time                   time             64    990000                                           
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 990001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @935 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h1c 
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 990001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @935 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h1c 
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 1030001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @947  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h20  
+#   data  integral         16    'he301
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 1030001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  -------------------------------------
+# Name    Type             Size  Value 
+# -------------------------------------
+# trans   ssp_transaction  -     @947  
+#   r_w   transfer         1     WRITE 
+#   addr  integral         12    'h20  
+#   data  integral         16    'he301
+# -------------------------------------
+# 
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(30) @ 1050000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Send to driver packet : 
+#  -------------------------------------------------------------------------------------------------------
+# Name                           Type             Size  Value                                            
+# -------------------------------------------------------------------------------------------------------
+# req                            ssp_transaction  -     @959                                             
+#   r_w                          transfer         1     READ                                             
+#   addr                         integral         12    'h20                                             
+#   data                         integral         16    'h441f                                           
+#   begin_time                   time             64    1050000                                          
+#   depth                        int              32    'd2                                              
+#   parent sequence (name)       string           16    read_write_value                                 
+#   parent sequence (full name)  string           49    uvm_test_top.ssp_env.agt.ssp_seq.read_write_value
+#   sequencer                    string           32    uvm_test_top.ssp_env.agt.ssp_seq                 
+# -------------------------------------------------------------------------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_monitor.sv(36) @ 1070001: uvm_test_top.ssp_env.agt.ssp_mon [ssp_monitor] Observed transaction : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @951 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_INFO ../SSP_VIP/ssp_scoreboard.sv(13) @ 1070001: uvm_test_top.ssp_env.scb [ssp_scoreboard] Get packet from monitor : 
+#  ------------------------------------
+# Name    Type             Size  Value
+# ------------------------------------
+# trans   ssp_transaction  -     @951 
+#   r_w   transfer         1     READ 
+#   addr  integral         12    'h0  
+#   data  integral         16    'h0  
+# ------------------------------------
+# 
+# UVM_ERROR ../SSP_sequences/read_write_value_seq.sv(34) @ 1110000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] At address: 16'h20 expected value: 16'he301 actual: 16'h0
+# UVM_INFO ../SSP_sequences/read_write_value_seq.sv(41) @ 1110000: uvm_test_top.ssp_env.agt.ssp_seq@@read_write_value [read_write_value_seq] Recevied rsp to driver: 
+#  --------------------------------------------
+# Name          Type             Size  Value  
+# --------------------------------------------
+# req           ssp_transaction  -     @967   
+#   r_w         transfer         1     READ   
+#   addr        integral         12    'h20   
+#   data        integral         16    'h0    
+#   begin_time  time             64    1050000
+# --------------------------------------------
+# 
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1268) @ 1110000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   78
+# UVM_WARNING :    1
+# UVM_ERROR :    8
+# UVM_FATAL :    0
+# ** Report counts by id
+# [ILLVERB]     1
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# [read_write_value_seq]    28
+# [ssp_agent]     1
+# [ssp_monitor]    26
+# [ssp_scoreboard]    26
+# ** Note: $finish    : verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1110 ns  Iteration: 61  Instance: /tb

@@ -33,7 +33,7 @@ initial begin
     /** Set virtual interface to driver for control, learn detail in next session */
     uvm_config_db#(virtual ssp_if)::set(null, "uvm_test_top", "ssp_vif",ssp_vif);
     /** Start the UVM test */
-    run_test("default_value_test");
+    run_test("read_write_value_test");
     #1000
     $finish;
 end

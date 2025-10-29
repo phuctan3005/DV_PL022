@@ -1,7 +1,7 @@
 #========================
 # Define variables
 #========================
-TESTNAME ?= default_value_test
+TESTNAME ?= tb
 TB_NAME  ?= tb
 RADIX    ?= hexadecimal
 SEED     ?= 1

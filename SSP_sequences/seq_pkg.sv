@@ -4,4 +4,5 @@
         `include "uvm_macros.svh"
         import ssp_pkg::*;
         `include "default_value_seq.sv"
+        `include "read_write_value_seq.sv"
     endpackage

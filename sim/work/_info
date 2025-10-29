@@ -9,10 +9,10 @@ Z0 dE:/FPT/GITLAB_FPT/PROJECT_FPT/PL022_SPI/sim
 !i10e 25
 !i10f 100
 T_opt
-!s110 1761721346
-VU7`>4I^WZaH50<ZFmlo992
+!s110 1761723892
+VGNh96Gb3]1OHdAKD<6nCM0
 04 2 4 work tb fast 0
-=1-d8bbc1abb79e-6901bc00-2fe-21bc
+=1-d8bbc1abb79e-6901c5f2-102-6408
 o-quiet -auto_acc_if_foreign -work work -L uvm_lib -noduplicatemsg +acc
 n@_opt
 OL;O;10.2c;57
@@ -20,12 +20,12 @@ Xseq_pkg
 Z1 DXx6 sv_std 3 std 0 22 `a<MJET1=lN@jzbA7kHm;1
 Z2 DXx6 mtiUvm 7 uvm_pkg 0 22 6c<UYR5cbJC8ZT=63Rnh52
 Z3 DXx4 work 7 ssp_pkg 0 22 =?MPH[b0dO<dRczjaFeWf2
-Z4 !s110 1761721342
-IaNB2RbCD9PPlic;zD10nQ0
-VaNB2RbCD9PPlic;zD10nQ0
+Z4 !s110 1761723887
+I<7^a3zKFLf_83_gI_z?D20
+V<7^a3zKFLf_83_gI_z?D20
 S1
 Z5 dE:/FPT/GITLAB_FPT/PROJECT_FPT/PL022_SPI/sim
-w1761720882
+w1761722627
 8../SSP_sequences/seq_pkg.sv
 F../SSP_sequences/seq_pkg.sv
 Z6 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/uvm_macros.svh
@@ -41,24 +41,25 @@ Z15 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_callback_defines.svh
 Z16 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_reg_defines.svh
 Z17 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_deprecated_defines.svh
 F../SSP_sequences/default_value_seq.sv
+F../SSP_sequences/read_write_value_seq.sv
 L0 1
 Z18 OL;L;10.2c;57
 r1
 31
-Z19 !s108 1761721342.006000
-Z20 !s107 ../testcase/default_value_test.sv|../testcase/ssp_base_test.sv|../SSP_sequences/default_value_seq.sv|../SSP_VIP/ssp_environment.sv|../SSP_VIP/ssp_scoreboard.sv|../SSP_VIP/ssp_agent.sv|../SSP_VIP/ssp_monitor.sv|../SSP_VIP/ssp_driver.sv|../SSP_VIP/ssp_sequencer.sv|../SSP_VIP/ssp_transaction.sv|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_deprecated_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_reg_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_callback_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_sequence_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/tlm1/uvm_tlm_imps.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_tlm_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_printer_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_object_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_phase_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_message_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_version_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/uvm_macros.svh|../tb/tb.sv|../testcase/test_pkg.sv|../SSP_sequences/seq_pkg.sv|../SSP_VIP/ssp_pkg.sv|../SSP_VIP/ssp_interface.sv|../rtl/ssp_register.v|
+Z19 !s108 1761723886.903000
+Z20 !s107 ../testcase/read_write_value_test.sv|../testcase/default_value_test.sv|../testcase/ssp_base_test.sv|../SSP_sequences/read_write_value_seq.sv|../SSP_sequences/default_value_seq.sv|../SSP_VIP/ssp_environment.sv|../SSP_VIP/ssp_scoreboard.sv|../SSP_VIP/ssp_agent.sv|../SSP_VIP/ssp_monitor.sv|../SSP_VIP/ssp_driver.sv|../SSP_VIP/ssp_sequencer.sv|../SSP_VIP/ssp_transaction.sv|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_deprecated_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_reg_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_callback_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_sequence_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/tlm1/uvm_tlm_imps.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_tlm_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_printer_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_object_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_phase_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_message_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_version_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/uvm_macros.svh|../tb/tb.sv|../testcase/test_pkg.sv|../SSP_sequences/seq_pkg.sv|../SSP_VIP/ssp_pkg.sv|../SSP_VIP/ssp_interface.sv|../rtl/ssp_register.v|
 Z21 !s90 -sv|+incdir+E:\FPT\QUESTA\verilog_src\uvm_1_1d\src|-f|compile.f|-l|compile.log|
 Z22 o-sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
 Z23 !s92 -sv {+incdir+E:\FPT\QUESTA\verilog_src\uvm_1_1d\src} +incdir+../rtl +incdir+../SSP_VIP +incdir+../SSP_sequences +incdir+../testcase +incdir+../tb -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!s100 J]1>7Ve2LN8Ei>cJLzPJf1
 !i10b 1
-!s100 O@h7W7<0IF4:Wf<oSjLHD2
 !s85 0
 !i111 0
 Yssp_if
 R1
-R4
+Z24 !s110 1761723886
 IXHzAFNnXeG9I=oTlm_@Yl0
-Z24 V`JN@9S9cnhjKRR_L]QIcM3
+Z25 V`JN@9S9cnhjKRR_L]QIcM3
 S1
 R5
 w1761640856
@@ -73,9 +74,9 @@ R20
 R21
 R22
 R23
-!i10b 1
 !s100 4TIX4hIiA=Sj8@lc`OP2N2
 !s105 ssp_interface_sv_unit
+!i10b 1
 !s85 0
 !i111 0
 Xssp_pkg
@@ -117,21 +118,21 @@ R20
 R21
 R22
 R23
-!i10b 1
 !s100 @oI_<DG24<Hia2`@2a2cR0
+!i10b 1
 !s85 0
 !i111 0
 vssp_register
 R1
-R4
-I@Mh:boZE`YX?zD3Ll0nMS1
 R24
+ImYd?A9?<jG9j]U2_na@dB1
+R25
 S1
 R5
-w1761720362
+w1761723878
 8../rtl/ssp_register.v
 F../rtl/ssp_register.v
-L0 7
+L0 5
 R18
 r1
 31
@@ -140,9 +141,9 @@ R20
 R21
 R22
 R23
-!i10b 1
-!s100 =KKPEVchMO478eWCWOKDW2
 !s105 ssp_register_v_unit
+!i10b 1
+!s100 fGYo47YS`::amKO:Q0aHn0
 !s85 0
 !i111 0
 vtb
@@ -150,17 +151,17 @@ R1
 DXx4 work 10 tb_sv_unit 0 22 <EfjX0P`VaHilz2eniBmX3
 R2
 R3
-Z25 DXx4 work 7 seq_pkg 0 22 aNB2RbCD9PPlic;zD10nQ0
-DXx4 work 8 test_pkg 0 22 NF;R7E0^MD^BVXaSRojcS3
-R24
+Z26 DXx4 work 7 seq_pkg 0 22 <7^a3zKFLf_83_gI_z?D20
+DXx4 work 8 test_pkg 0 22 <0EhmU_V6`hJD<KS`l@JB0
+R25
 r1
 31
-IN^n8]NQZ[IS8IgeA1hCEk0
+I4JC9H^z26eb^Q5dJFAQED2
 S1
 R5
-Z26 w1761720712
-Z27 8../tb/tb.sv
-Z28 F../tb/tb.sv
+Z27 w1761722046
+Z28 8../tb/tb.sv
+Z29 F../tb/tb.sv
 L0 2
 R18
 R19
@@ -168,10 +169,10 @@ R20
 R21
 R22
 R23
+!s100 NBB3LFbhZE4c1VimBAMc?2
+!s105 tb_sv_unit
 !s85 0
 !i10b 1
-!s100 jTOjT:<fQ[Mz4KeP:bX893
-!s105 tb_sv_unit
 !i111 0
 Xtb_sv_unit
 R1
@@ -181,9 +182,9 @@ r1
 I<EfjX0P`VaHilz2eniBmX3
 S1
 R5
-R26
 R27
 R28
+R29
 L0 1
 R18
 R19
@@ -191,22 +192,22 @@ R20
 R21
 R22
 R23
+!s100 `EKAOVR?Q63@`ZSK6`Zf:2
 !s85 0
 !i10b 1
-!s100 `EKAOVR?Q63@`ZSK6`Zf:2
 !i103 1
 !i111 0
 Xtest_pkg
 R1
 R2
 R3
-R25
+R26
 R4
-INF;R7E0^MD^BVXaSRojcS3
-VNF;R7E0^MD^BVXaSRojcS3
+I<0EhmU_V6`hJD<KS`l@JB0
+V<0EhmU_V6`hJD<KS`l@JB0
 S1
 R5
-w1761711153
+w1761721998
 8../testcase/test_pkg.sv
 F../testcase/test_pkg.sv
 R6
@@ -223,6 +224,7 @@ R16
 R17
 F../testcase/ssp_base_test.sv
 F../testcase/default_value_test.sv
+F../testcase/read_write_value_test.sv
 L0 1
 R18
 r1
@@ -232,7 +234,7 @@ R20
 R21
 R22
 R23
+!s100 F^<gok@CAF1Q;31K<8aJ20
 !i10b 1
-!s100 eW7B8Gzzj:gSohDHJaWM11
 !s85 0
 !i111 0

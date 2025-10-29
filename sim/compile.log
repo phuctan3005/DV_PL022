@@ -7,6 +7,8 @@ vlog.exe -sv +incdir+E:\FPT\QUESTA\verilog_src\uvm_1_1d\src -f compile.f -l comp
 -- Compiling package seq_pkg
 -- Importing package ssp_pkg
 ** Warning: ../SSP_sequences/default_value_seq.sv(10): (vlog-2239) Treating stand-alone use of presumed external function as an implicit VOID cast.
+** Warning: ../SSP_sequences/read_write_value_seq.sv(13): (vlog-2239) Treating stand-alone use of presumed external function as an implicit VOID cast.
+** Warning: ../SSP_sequences/read_write_value_seq.sv(25): (vlog-2239) Treating stand-alone use of presumed external function as an implicit VOID cast.
 -- Compiling package test_pkg
 -- Importing package seq_pkg
 ** Warning: ../tb/tb.sv(1): (vlog-2283) Extra semicolon in $unit (global) scope.
