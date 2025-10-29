@@ -10,6 +10,7 @@ class default_value_seq extends uvm_sequence #(ssp_transaction);
             req.randomize() with{
                 r_w == ssp_transaction::READ;
                 addr == i;
+                data == 0;
             };
             `uvm_info (get_type_name(),$sformatf("Send to driver packet : \n %0s",req.sprint()),UVM_LOW)
             finish_item(req);

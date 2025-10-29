@@ -6,6 +6,8 @@ TB_NAME  ?= tb
 RADIX    ?= hexadecimal
 SEED     ?= 1
 UVM_LIB ?= uvm_lib
+#QUESTA_HOME ?= E:/FPT/QUESTA
+#UVM_HOME ?= $(QUESTA_HOME)/verilog_src/uvm_1_1d/src
 #========================
 # Default target
 #========================

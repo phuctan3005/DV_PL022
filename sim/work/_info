@@ -1,0 +1,214 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 dE:/FPT/GITLAB_FPT/PROJECT_FPT/PL022_SPI/sim
+!s112 0.1
+!i10d 8192
+!i10e 25
+!i10f 100
+T_opt
+!s110 1761713010
+V]M5gZ_Q_iLIjJ=@?zQ@ef1
+04 2 4 work tb fast 0
+=1-d8bbc1abb79e-69019b70-34c-4da0
+o-quiet -auto_acc_if_foreign -work work -L uvm_lib -noduplicatemsg +acc
+n@_opt
+OL;O;10.2c;57
+Xseq_pkg
+Z1 DXx6 sv_std 3 std 0 22 `a<MJET1=lN@jzbA7kHm;1
+Z2 DXx6 mtiUvm 7 uvm_pkg 0 22 6c<UYR5cbJC8ZT=63Rnh52
+Z3 DXx4 work 7 ssp_pkg 0 22 ;F;<E[AazJ<bc5nKAP=J]1
+Z4 !s110 1761713006
+IoooVi=ejzVbjO6E8HPoVl1
+VoooVi=ejzVbjO6E8HPoVl1
+S1
+Z5 dE:/FPT/GITLAB_FPT/PROJECT_FPT/PL022_SPI/sim
+w1761713003
+8../SSP_sequences/seq_pkg.sv
+F../SSP_sequences/seq_pkg.sv
+Z6 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/uvm_macros.svh
+Z7 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_version_defines.svh
+Z8 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_message_defines.svh
+Z9 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_phase_defines.svh
+Z10 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_object_defines.svh
+Z11 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_printer_defines.svh
+Z12 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_tlm_defines.svh
+Z13 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/tlm1/uvm_tlm_imps.svh
+Z14 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_sequence_defines.svh
+Z15 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_callback_defines.svh
+Z16 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_reg_defines.svh
+Z17 FE:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_deprecated_defines.svh
+F../SSP_sequences/default_value_seq.sv
+L0 1
+Z18 OL;L;10.2c;57
+r1
+31
+Z19 !s108 1761713006.337000
+Z20 !s107 ../testcase/default_value_test.sv|../testcase/ssp_base_test.sv|../SSP_sequences/default_value_seq.sv|../SSP_VIP/ssp_environment.sv|../SSP_VIP/ssp_scoreboard.sv|../SSP_VIP/ssp_agent.sv|../SSP_VIP/ssp_monitor.sv|../SSP_VIP/ssp_driver.sv|../SSP_VIP/ssp_sequencer.sv|../SSP_VIP/ssp_transaction.sv|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_deprecated_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_reg_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_callback_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_sequence_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/tlm1/uvm_tlm_imps.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_tlm_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_printer_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_object_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_phase_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_message_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/macros/uvm_version_defines.svh|E:\FPT\QUESTA\verilog_src\uvm_1_1d\src/uvm_macros.svh|../tb/tb.sv|../testcase/test_pkg.sv|../SSP_sequences/seq_pkg.sv|../SSP_VIP/ssp_pkg.sv|../SSP_VIP/ssp_interface.sv|
+Z21 !s90 -sv|+incdir+E:\FPT\QUESTA\verilog_src\uvm_1_1d\src|-f|compile.f|-l|compile.log|
+Z22 o-sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z23 !s92 -sv {+incdir+E:\FPT\QUESTA\verilog_src\uvm_1_1d\src} +incdir+../rtl +incdir+../SSP_VIP +incdir+../SSP_sequences +incdir+../testcase +incdir+../tb -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!i10b 1
+!s100 ;JlMlRe^e2PZOX:A<7^TH0
+!s85 0
+!i111 0
+Yssp_if
+R1
+R4
+IXHzAFNnXeG9I=oTlm_@Yl0
+Z24 V`JN@9S9cnhjKRR_L]QIcM3
+S1
+R5
+w1761640856
+8../SSP_VIP/ssp_interface.sv
+F../SSP_VIP/ssp_interface.sv
+L0 1
+R18
+r1
+31
+R19
+R20
+R21
+R22
+R23
+!s100 4TIX4hIiA=Sj8@lc`OP2N2
+!s105 ssp_interface_sv_unit
+!i10b 1
+!s85 0
+!i111 0
+Xssp_pkg
+R1
+R2
+R4
+I;F;<E[AazJ<bc5nKAP=J]1
+V;F;<E[AazJ<bc5nKAP=J]1
+S1
+R5
+w1761710167
+8../SSP_VIP/ssp_pkg.sv
+F../SSP_VIP/ssp_pkg.sv
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+F../SSP_VIP/ssp_transaction.sv
+F../SSP_VIP/ssp_sequencer.sv
+F../SSP_VIP/ssp_driver.sv
+F../SSP_VIP/ssp_monitor.sv
+F../SSP_VIP/ssp_agent.sv
+F../SSP_VIP/ssp_scoreboard.sv
+F../SSP_VIP/ssp_environment.sv
+L0 1
+R18
+r1
+31
+R19
+R20
+R21
+R22
+R23
+!s100 DJbjg:z4@g;5^gCj:H_gg3
+!i10b 1
+!s85 0
+!i111 0
+vtb
+R1
+DXx4 work 10 tb_sv_unit 0 22 6^dQSZ1mM:64HE5?0g2?21
+R2
+R3
+Z25 DXx4 work 7 seq_pkg 0 22 oooVi=ejzVbjO6E8HPoVl1
+DXx4 work 8 test_pkg 0 22 NF;R7E0^MD^BVXaSRojcS3
+R24
+r1
+31
+IECLP37<d;@jUUK=7f^:Se1
+S1
+R5
+Z26 w1761709903
+Z27 8../tb/tb.sv
+Z28 F../tb/tb.sv
+L0 2
+R18
+R19
+R20
+R21
+R22
+R23
+!s100 Uf06f]:D`i:hTo6lNo8582
+!s105 tb_sv_unit
+!s85 0
+!i10b 1
+!i111 0
+Xtb_sv_unit
+R1
+V6^dQSZ1mM:64HE5?0g2?21
+r1
+31
+I6^dQSZ1mM:64HE5?0g2?21
+S1
+R5
+R26
+R27
+R28
+L0 1
+R18
+R19
+R20
+R21
+R22
+R23
+!s100 00<O`?388Qc@1LBFDaWKR1
+!s85 0
+!i10b 1
+!i103 1
+!i111 0
+Xtest_pkg
+R1
+R2
+R3
+R25
+R4
+INF;R7E0^MD^BVXaSRojcS3
+VNF;R7E0^MD^BVXaSRojcS3
+S1
+R5
+w1761711153
+8../testcase/test_pkg.sv
+F../testcase/test_pkg.sv
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+R15
+R16
+R17
+F../testcase/ssp_base_test.sv
+F../testcase/default_value_test.sv
+L0 1
+R18
+r1
+31
+R19
+R20
+R21
+R22
+R23
+!s100 eW7B8Gzzj:gSohDHJaWM11
+!i10b 1
+!s85 0
+!i111 0
