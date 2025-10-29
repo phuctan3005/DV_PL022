@@ -37,7 +37,7 @@ class ssp_driver extends uvm_driver #(ssp_transaction) ;
         @(posedge ssp_vif.PCLK);
         ssp_vif.PENABLE <= 1'b1;
         if (trans.r_w == ssp_transaction::READ) begin
-            ssp_vif.PRDATA <= trans.data;
+              trans.data <= ssp_vif.PRDATA ;
         end
 
         @(posedge ssp_vif.PCLK);

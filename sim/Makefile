@@ -48,7 +48,7 @@ run:
 # Open waveform
 #========================
 wave:
-	vsim -L uvm -i  -view vsim.wlf -do "add wave vsim:/$(TB_NAME)/*; radix -$(RADIX)"
+	start vsim -L uvm -i  -view vsim.wlf -do "add wave vsim:/$(TB_NAME)/*; radix -$(RADIX)"
 
 #========================
 # Run simulation with GUI

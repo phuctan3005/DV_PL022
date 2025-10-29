@@ -1,5 +1,6 @@
 # Include path
 +incdir+../rtl
+../rtl/ssp_register.v
 +incdir+../SSP_VIP
 +incdir+../SSP_sequences
 +incdir+../testcase

@@ -1,0 +1,22 @@
+QuestaSim-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+vlog.exe -sv +incdir+E:\FPT\QUESTA\verilog_src\uvm_1_1d\src -f compile.f -l compile.log 
+-- Compiling module ssp_register
+-- Compiling interface ssp_if
+-- Compiling package ssp_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Compiling package seq_pkg
+-- Importing package ssp_pkg
+** Warning: ../SSP_sequences/default_value_seq.sv(10): (vlog-2239) Treating stand-alone use of presumed external function as an implicit VOID cast.
+-- Compiling package test_pkg
+-- Importing package seq_pkg
+** Warning: ../tb/tb.sv(1): (vlog-2283) Extra semicolon in $unit (global) scope.
+** Warning: ../tb/tb.sv(41): (vlog-2284) Empty $unit scope found.
+-- Compiling package tb_sv_unit
+-- Compiling module tb
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+-- Importing package test_pkg
+-- Importing package ssp_pkg
+-- Importing package seq_pkg
+
+Top level modules:
+	tb
