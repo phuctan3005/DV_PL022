@@ -1,7 +1,7 @@
 #========================
 # Define variables
 #========================
-TESTNAME ?= tb
+TESTNAME ?= default_value_test
 TB_NAME  ?= tb
 RADIX    ?= hexadecimal
 SEED     ?= 1
@@ -31,8 +31,16 @@ build:
 # Run simulation
 #========================
 run:
-	
-	vsim -L $(UVM_LIB) -sv_seed $(SEED) -debugDB -l $(TESTNAME).log -voptargs=+acc -assertdebug -c $(TB_NAME) -do "log -r /*;run -all;" +$(TESTNAME)
+	vsim -L $(UVM_LIB) \
+	     -sv_seed $(SEED) \
+	     -debugDB \
+	     -l $(TESTNAME).log \
+	     -voptargs=+acc \
+	     -assertdebug \
+	     -c $(TB_NAME) \
+	     -do "log -r /*; run -all;" \
+	     +$(TESTNAME) \
+	     +UVM_VERBOSITY=$(VERBOSITY)
 
 #========================
 # Open waveform
