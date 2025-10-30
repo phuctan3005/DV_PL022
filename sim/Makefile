@@ -6,6 +6,9 @@ TB_NAME  ?= tb
 RADIX    ?= hexadecimal
 SEED     ?= 1
 UVM_LIB ?= uvm_lib
+VERBOSITY ?= HIGH
+#QUESTA_HOME ?= E:/FPT/QUESTA
+#UVM_HOME ?= $(QUESTA_HOME)/verilog_src/uvm_1_1d/src
 #========================
 # Default target
 #========================
@@ -31,14 +34,22 @@ build:
 # Run simulation
 #========================
 run:
-	
-	vsim -L $(UVM_LIB) -sv_seed $(SEED) -debugDB -l $(TESTNAME).log -voptargs=+acc -assertdebug -c $(TB_NAME) -do "log -r /*;run -all;" +$(TESTNAME)
+	vsim -L $(UVM_LIB) \
+	     -sv_seed $(SEED) \
+	     -debugDB \
+	     -l $(TESTNAME).log \
+	     -voptargs=+acc \
+	     -assertdebug \
+	     -c $(TB_NAME) \
+	     -do "log -r /*; run -all;" \
+	     +$(TESTNAME) \
+	     +UVM_VERBOSITY=$(VERBOSITY)
 
 #========================
 # Open waveform
 #========================
 wave:
-	vsim -L uvm -i  -view vsim.wlf -do "add wave vsim:/$(TB_NAME)/*; radix -$(RADIX)"
+	start vsim -L uvm -i  -view vsim.wlf -do "add wave vsim:/$(TB_NAME)/*; radix -$(RADIX)"
 
 #========================
 # Run simulation with GUI
