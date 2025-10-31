@@ -22,12 +22,21 @@ initial begin
     ssp_vif.PCLK = 0;
     forever #10 ssp_vif.PCLK = ~ssp_vif.PCLK ;
 end
-// PRESETn
 initial begin
-    ssp_vif.PRESETn = 0;
-    repeat(2) @(posedge ssp_vif.PCLK);
-    #1ps; ssp_vif.PRESETn = 1;
+    ssp_vif.SSPCLK = 0;
+    forever #10 ssp_vif.SSPCLK = ~ssp_vif.SSPCLK ;
 end
+// PRESETn
+// initial begin
+//     ssp_vif.PRESETn = 0;
+//     repeat(2) @(posedge ssp_vif.PCLK);
+//     #1ps; ssp_vif.PRESETn = 1;
+// end
+// initial begin
+//     ssp_vif.nSSPRST = 0;
+//     repeat(2) @(posedge ssp_vif.PCLK);
+//     #1ps; ssp_vif.nSSPRST = 1;
+// end
 // TEST 
 initial begin
     /** Set virtual interface to driver for control, learn detail in next session */
@@ -41,7 +50,7 @@ initial begin
         // run_test ("read_write_value_test");
         //run_test( "reset_on_fly_test");
 
-         run_test( "hd_single_data_transmit_test");
+         run_test( "hd_single_data_transmit_test"); // neu su dung test case nay hay tat dong 30-39 
         // run_test( "hd_multi_data_transmit_test");
 
         // run_test( "hd_single_data_receive_test");
