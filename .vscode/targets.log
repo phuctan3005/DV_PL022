@@ -7,7 +7,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # There is NO WARRANTY, to the extent permitted by law.
  
 
-# Make data base, printed on Thu Oct 30 19:00:04 2025
+# Make data base, printed on Fri Oct 31 17:32:18 2025
 
 # Variables
 
@@ -42,18 +42,17 @@ VSCODE_NLS_CONFIG = {"userLocale":"en-us","osLocale":"vi","resolvedLanguage":"en
 # environment
 ONEDRIVE = E:\One_Drive\OneDrive - VNU-HCMUS
 # environment
-EFC_9424_2775293581 = 1
-# environment
 QSYS_ROOTDIR = E:\components\FPGA\quartus\sopc_builder\bin
 # environment
-PATHEXT = .COM;.EXE; 
-.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+VSCODE_PID = 3008
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
 # makefile
 MAKEFILE_LIST := 
 # environment
-EFC_9424_1262719628 = 1
-# environment
 FPS_BROWSER_USER_PROFILE_STRING = Default
+# environment
+EFC_4260_2283032206 = 1
 # environment
 TMP = C:\Users\zztan\AppData\Local\Temp
 # environment
@@ -71,6 +70,8 @@ COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # environment
 ZES_ENABLE_SYSMAN = 1
 # environment
+EFC_4260_3789132940 = 1
+# environment
 CHOCOLATEYLASTPATHUPDATE = 134057439673479331
 # environment
 PROCESSOR_ARCHITECTURE = x86
@@ -80,6 +81,8 @@ USERPROFILE = C:\Users\zztan
 CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
 # environment
 ALLUSERSPROFILE = C:\ProgramData
+# environment
+EFC_4260_1592913036 = 1
 # environment
 SOPC_KIT_NIOS2 = C:\intelFPGA_standard\24.1std\nios2eds
 # environment
@@ -91,7 +94,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_16452_QJBXTZAMHCTCHBXI
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_3008_GHTFJPBXCJPSZMXK
 # environment
 COMPUTERNAME = MSI
 # environment
@@ -109,7 +112,7 @@ RISCV = E:\RISCV_COMPILER\riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-w64-min
 # environment
 VSCODE_CODE_CACHE_PATH = C:\Users\zztan\AppData\Roaming\Code\CachedData\7d842fb85a0275a4a8e4d7e040d2625abbf7f084
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
 # environment
@@ -129,6 +132,8 @@ MAKECMDGOALS := all
 # environment
 VSCODE_ESM_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
+EFC_4260_2775293581 = 1
+# environment
 JAVA_HOME = E:\One_Drive\NAM_4\ANALOG_IC_DESIGN\THUC_HANH\jre-8u471-windows-x64.exe
 # environment
 ONEDRIVECOMMERCIAL = E:\One_Drive\OneDrive - VNU-HCMUS
@@ -138,14 +143,14 @@ MAKE_VERSION := 3.82
 .DEFAULT_GOAL := 
 # environment
 APPLICATION_INSIGHTS_NO_STATSBEAT = true
+# environment
+EFC_4260_1262719628 = 1
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
 PROGRAMFILES(X86) = C:\Program Files (x86)
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
-# environment
-EFC_9424_2283032206 = 1
 # environment
 LOCALAPPDATA = C:\Users\zztan\AppData\Local
 # environment
@@ -187,8 +192,6 @@ APPDATA = C:\Users\zztan\AppData\Roaming
 # environment
 TEMP = C:\Users\zztan\AppData\Local\Temp
 # environment
-EFC_9424_3789132940 = 1
-# environment
 COMSPEC = C:\WINDOWS\system32\cmd.exe
 # default
 MAKEFILES := 
@@ -196,8 +199,6 @@ MAKEFILES :=
 QUARTUS_ROOTDIR = C:\intelFPGA_standard\24.1std\quartus
 # automatic
 <F = $(notdir $<)
-# environment
-EFC_9424_1592913036 = 1
 # environment
 LC_ALL = C
 # environment
@@ -221,14 +222,11 @@ PROCESSOR_LEVEL = 6
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
-VSCODE_PID = 16452
+APPLICATIONINSIGHTS_CONFIGURATION_CONTENT = {}
 # environment
-USERDOMAIN_ROAMINGPROFILE  
-make.exe: *** No rule to make target `all'.  Stop.
-
-= MSI
+USERDOMAIN_ROAMINGPROFILE = MSI
 # variable set hash-table stats:
-# Load=106/1024=10%, Rehash=0, Collisions=12/121=10%
+# Load=107/1024=10%, Rehash=0, Collisions=13/122=11%
 
 # Pattern-specific Variable Values
 
@@ -243,7 +241,7 @@ make.exe: *** No rule to make target `all'.  Stop.
 # \Windows\System32\OpenSSH\;C: could not be stat'd.
 # \FPT\QuestaSim 10.2c\QuestaSim 10.2c\SET_TING\win64;E: could not be stat'd.
 # \FPT\QuestaSim 10.2c\QuestaSim 10.2c\SETING\win64;E: could not be stat'd.
-# . (key e:/FPT/GITLAB_FPT/PROJECT_FPT/PL022_SPI, mtime 1761825595): 13 files, no impossibilities.
+# . (key e:/FPT/GITLAB_FPT/PROJECT_FPT/PL022_SPI, mtime 1761878079): 14 files, no impossibilities.
 # \Windows;C: could not be stat'd.
 # \Program Files\Docker\Docker\resources\bin;C: could not be stat'd.
 # \WINDOWS\System32\Wbem;C: could not be stat'd.
@@ -272,7 +270,7 @@ make.exe: *** No rule to make target `all'.  Stop.
 # \Python314\Scripts\;C: could not be stat'd.
 # \MATLAB\runtime\win64;E: could not be stat'd.
 
-# 18 files, no impossibilities in 35 directories.
+# 19 files, no impossibilities in 35 directories.
 
 # Implicit Rules
 
@@ -328,13 +326,15 @@ GNUmakefile:
 
 # No general (`VPATH' variable) search path.
 
-# # of strings in strcache: 0 / lookups = 60 / hits = 60
+# # of strings in strcache: 0 / lookups = 61 / hits = 61
 # # of strcache buffers: 1 (* 8176 B/buffer = 8176 B)
-# strcache used: total = 0 (1284) / max = 0 / min = 8176 / avg = 0
-# strcache free: total = 0 (6892) / max = 0 / min = 8176 / avg = 0
+# strcache used: total = 0 (1290) / max = 0 / min = 8176 / avg = 0
+# strcache free: total = 0 (6886) / max = 0 / min = 8176 / avg = 0
 
 # strcache hash-table stats:
-# Load=56/8192=1%, Rehash=0, Collisions=2/60=3%
-# Finished Make data base on Thu Oct 30 19:00:04 2025
+# Load=57/8192=1%, Rehash=0, Collisions=2/61=3%
+# Finished Make data base on Fri Oct 31 17:32:18 2025
 
  
+make.exe: *** No rule to make target `all'.  Stop.
+

@@ -1,0 +1,401 @@
+class ssp_agent extends uvm_agent;
+    //factory
+    `uvm_component_utils(ssp_agent)
+    //instance component
+    ssp_sequencer   ssp_seq;
+    ssp_driver      ssp_drv;
+    ssp_monitor     ssp_mon;
+    virtual ssp_if ssp_vif; // interface config_db
+    function new(string name = "ssp_agent", uvm_component parent);
+        super.new(name,parent);
+    endfunction:new
+
+    virtual function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+        if(!uvm_config_db#(virtual ssp_if)::get(this,"","ssp_vif",ssp_vif))
+        `uvm_fatal(get_type_name(),$sformatf("Failed to get from uvm_config_db"))
+        if (is_active == UVM_ACTIVE) begin
+            `uvm_info(get_type_name(), $sformatf ("Active agent is configued"), UVM_LOW)
+            ssp_seq = ssp_sequencer::type_id::create("ssp_seq",this);
+            ssp_drv = ssp_driver::type_id::create("ssp_drv",this);
+            ssp_mon = ssp_monitor::type_id::create("ssp_mon",this);
+            uvm_config_db#(virtual ssp_if)::set(this,"ssp_drv","ssp_vif",ssp_vif);
+            uvm_config_db#(virtual ssp_if)::set(this,"ssp_mon","ssp_vif",ssp_vif);
+        end else begin 
+            `uvm_info(get_type_name(), $sformatf("Passive agent is configued"), UVM_LOW)
+            ssp_mon = ssp_monitor::type_id::create("ssp_mon",this);
+            uvm_config_db#(virtual ssp_if)::set(this,"ssp_mon","ssp_vif",ssp_vif);
+        end
+
+    endfunction:build_phase
+    virtual function void connect_phase(uvm_phase phase);
+        super.connect_phase(phase);
+       if (is_active == UVM_ACTIVE) begin
+            // đảm bảo cả 2 instance tồn tại trước khi connect
+            if (ssp_drv != null && ssp_seq != null) begin
+                // connect driver port -> sequencer export
+                ssp_drv.seq_item_port.connect(ssp_seq.seq_item_export);
+            end else begin
+                `uvm_warning(get_type_name(), "Attempt to connect driver<->sequencer but one of them is null")
+            end
+        end
+    endfunction: connect_phase    
+
+
+endclass : ssp_agent
+class ssp_driver extends uvm_driver #(ssp_transaction) ;
+    //factory
+    `uvm_component_utils(ssp_driver) 
+    virtual ssp_if ssp_vif; // config_db
+    //instance component
+    function new(string name = "ssp_driver", uvm_component parent);
+        super.new(name,parent);
+    endfunction:new
+
+    virtual function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+        if(!uvm_config_db#(virtual ssp_if)::get(this,"","ssp_vif",ssp_vif))
+        `uvm_fatal(get_type_name(),$sformatf("Failed to get from uvm_config_db"))
+    endfunction:build_phase  
+
+    virtual task run_phase(uvm_phase phase);
+        wait (ssp_vif.PRESETn == 1'b1);
+        forever begin
+            wait (ssp_vif.PRESETn == 1'b1);
+            seq_item_port.get_next_item(req);
+            driver(req);
+            $cast(rsp,req.clone());
+            rsp.set_id_info(req);
+            seq_item_port.put(rsp);
+            seq_item_port.item_done();
+        end
+    endtask:run_phase
+    task driver (inout ssp_transaction trans);
+        @(posedge ssp_vif.PCLK);
+        ssp_vif.PADDR   <= trans.addr;
+        ssp_vif.PWRITE  <= trans.r_w;
+        ssp_vif.PSEL    <= 1'b1;
+        ssp_vif.PENABLE <= 1'b0;
+        if (trans.r_w == ssp_transaction::WRITE) begin
+            ssp_vif.PWDATA <= trans.data;
+        end
+        
+        @(posedge ssp_vif.PCLK);
+        ssp_vif.PENABLE <= 1'b1;
+        if (trans.r_w == ssp_transaction::READ) begin
+              trans.data <= ssp_vif.PRDATA ;
+        end
+
+        @(posedge ssp_vif.PCLK);
+        ssp_vif.PSEL    <= 1'b0;
+        ssp_vif.PENABLE <= 1'b0;
+        ssp_vif.PADDR   <= 'z;
+        ssp_vif.PRDATA  <= '0;
+        ssp_vif.PWDATA  <= '0;
+        ssp_vif.PWRITE  <= 1'b0;
+    endtask
+endclass : ssp_driver
+class ssp_environment extends uvm_env;
+    `uvm_component_utils(ssp_environment)
+    virtual ssp_if  ssp_vif; // interface config_db
+    ssp_scoreboard  scb;
+    ssp_agent       agt;
+    function new(string name = "ssp_environment",uvm_component parent);
+        super.new(name ,parent);
+    endfunction:new
+    virtual function void build_phase (uvm_phase phase);
+        super.build_phase(phase);
+        `uvm_info("build phase", "Entered...", UVM_HIGH)
+        if(!uvm_config_db#(virtual ssp_if)::get(this,"","ssp_vif",ssp_vif))
+        `uvm_fatal(get_type_name(),$sformatf("Failed to get from uvm_config_db"))
+
+        scb = ssp_scoreboard::type_id::create("scb",this);
+        agt = ssp_agent::type_id::create("agt",this);
+        uvm_config_db#(virtual ssp_if)::set(this,"agt","ssp_vif",ssp_vif);
+        `uvm_info("build_phase", "Exiting...", UVM_HIGH) 
+    endfunction : build_phase
+    virtual function void connect_phase (uvm_phase phase);
+        super.connect_phase (phase);
+        agt.ssp_mon.monitor_port.connect(scb.scoreboard_export);
+    endfunction : connect_phase
+endclass : ssp_environment
+interface ssp_if;
+    ///////////////AMBA APB SIGNAL///////////
+    logic        PRESETn;
+    logic [11:2] PADDR;
+    logic        PCLK;
+    logic        PENABLE;
+    logic [15:0] PRDATA;
+    logic        PSEL;
+    logic [15:0] PWDATA;
+    logic        PWRITE;
+    ////////////////////////////////////////
+
+    ///////////On-chip signals//////////////
+    // SYSTEMS
+    logic        SSPCLK;
+    logic        nSSPRST;
+    //INTERUPT
+    logic        SSPTXINTR;
+    logic        SSPRXINTR;
+    logic        SSPRORINTR;
+    logic        SSPRTINTR;
+    logic        SSPINTR;
+    ////DMA CONTROL
+    logic        SSPTXDMASREQ;
+    logic        SSPRXDMASREQ;
+    logic        SSPTXDMABREQ;
+    logic        SSPRXDMABREQ;
+    logic        SSPTXDMACLR;
+    logic        SSPRXDMACLR;   
+    // SCANE
+    logic        SCANENABLE;
+    logic        SCANINPCLK;
+    logic        SCANOUTPCLK;
+    logic        SCANINSSPCLK;
+    logic        SCANOUTSSPCLK;    
+    ///////////////////////////////////////
+
+    /////////  Signals to pads/////////////
+    logic        SSPFSSOUT;
+    logic        SSPCLKOUT;
+    logic        SSPRXD;
+    logic        SSPTXD;
+    logic        nSSPCTLOE;
+    logic        SSPFSSIN;
+    logic        SSPCLKIN;
+    logic        nSSPOE;
+    //////////////////////////////////////
+    
+endinterface
+class ssp_monitor extends uvm_monitor ;
+    //factory
+    `uvm_component_utils(ssp_monitor) 
+    virtual ssp_if ssp_vif; // interface config_db
+    uvm_analysis_port #(ssp_transaction) monitor_port;
+    //instance component
+    function new(string name = "ssp_monitor", uvm_component parent);
+        super.new(name,parent);
+    endfunction:new
+
+    virtual function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+        monitor_port = new("monitor_port",this); /// TLM export
+        
+        if(!uvm_config_db#(virtual ssp_if)::get(this,"","ssp_vif",ssp_vif))
+        `uvm_fatal(get_type_name(),$sformatf("Failed to get from uvm_config_db"))
+
+    endfunction:build_phase  
+
+    virtual task run_phase(uvm_phase phase);
+        
+        wait (ssp_vif.PRESETn == 1'b1);
+        forever begin
+            ssp_transaction trans;
+            trans = ssp_transaction::type_id::create("trans",this);
+            @(posedge ssp_vif.PCLK);#1ps;
+            trans.addr = ssp_vif.PADDR ;
+            $cast(trans.r_w , ssp_vif.PWRITE);
+            if (ssp_vif.PWRITE == 1) begin
+                trans.data = ssp_vif.PWDATA;
+            end           
+            @(posedge ssp_vif.PCLK);#1ps;
+            if (ssp_vif.PWRITE == 0) begin
+                trans.data = ssp_vif.PRDATA;
+            end
+            `uvm_info(get_type_name(),$sformatf("Observed transaction : \n %s",trans.sprint()),UVM_LOW)
+            monitor_port.write(trans);
+        end
+        
+    endtask:run_phase
+
+endclass : ssp_monitor
+package ssp_pkg; 
+    
+    import uvm_pkg::*;
+    `include "uvm_macros.svh"
+    `include "ssp_transaction.sv"
+    `include "ssp_sequencer.sv"
+    `include "ssp_driver.sv"
+    `include "ssp_monitor.sv"
+    `include "ssp_agent.sv"
+    `include "ssp_scoreboard.sv"
+    `include "ssp_environment.sv"
+endpackage : ssp_pkg
+class ssp_scoreboard extends uvm_scoreboard;
+    `uvm_component_utils(ssp_scoreboard)
+    virtual ssp_if ssp_vif; // interface config_db
+    uvm_analysis_imp #(ssp_transaction,ssp_scoreboard) scoreboard_export;
+    function new(string name = "ssp_scoreboard",uvm_component parent);
+        super.new(name,parent);
+    endfunction:new
+    virtual function void build_phase (uvm_phase phase);
+        super.build_phase(phase);
+        scoreboard_export = new("scoreboard_export",this);
+    endfunction:build_phase
+    function void write (ssp_transaction trans);
+        `uvm_info (get_type_name(),$sformatf("Get packet from monitor : \n %0s",trans.sprint()),UVM_LOW)
+    endfunction:write
+endclass : ssp_scoreboard
+class ssp_sequencer extends uvm_sequencer #(ssp_transaction);
+    //factory
+    `uvm_component_utils(ssp_sequencer)
+    function new(string name = "ssp_sequencer", uvm_component parent);
+        super.new(name,parent);
+    endfunction:new
+endclass : ssp_sequencer
+class ssp_transaction extends uvm_sequence_item;
+    typedef enum bit { WRITE = 1 , READ = 0} transfer;
+    rand transfer r_w;
+    rand bit [11:0] addr;
+    rand bit [15:0] data;
+    bit        SSPFSSOUT;
+    bit        SSPCLKOUT;
+    bit        SSPRXD;
+    bit        SSPTXD;
+    bit        nSSPCTLOE;
+    bit        SSPFSSIN;
+    bit        SSPCLKIN;
+    bit        nSSPOE;
+    `uvm_object_utils_begin (ssp_transaction)
+        `uvm_field_enum (transfer,r_w           ,UVM_ALL_ON||UVM_HEX )
+        `uvm_field_int (addr                    ,UVM_ALL_ON||UVM_HEX)
+        `uvm_field_int (data                    ,UVM_ALL_ON||UVM_HEX)
+        `uvm_field_int (SSPFSSOUT               ,UVM_ALL_ON||UVM_HEX)
+        `uvm_field_int (SSPCLKOUT               ,UVM_ALL_ON||UVM_HEX)
+        `uvm_field_int (SSPRXD                  ,UVM_ALL_ON||UVM_HEX)
+        `uvm_field_int (SSPTXD                  ,UVM_ALL_ON||UVM_HEX)
+        `uvm_field_int (nSSPCTLOE               ,UVM_ALL_ON||UVM_HEX)
+        `uvm_field_int (SSPFSSIN                ,UVM_ALL_ON||UVM_HEX)
+        `uvm_field_int (SSPCLKIN                ,UVM_ALL_ON||UVM_HEX)
+        `uvm_field_int (nSSPOE                  ,UVM_ALL_ON||UVM_HEX)
+    `uvm_object_utils_end
+    function new(string name = "ssp_transaction");
+        super.new(name);
+    endfunction : new
+endclass : ssp_transaction
+    package seq_pkg;
+        
+        import uvm_pkg::*;
+        `include "uvm_macros.svh"
+        import ssp_pkg::*;
+        `include "default_value_seq.sv"
+        `include "read_write_value_seq.sv"
+        `include "reset_on_fly_seq.sv"
+        `include "apb_clock_seq.sv"
+        `include "apb_reset_seq.sv"
+        `include "hd_single_data_transmit_seq.sv"
+        `include "hd_multi_data_transmit_seq.sv"
+        `include "hd_single_data_receive_seq.sv"
+        `include "hd_multi_data_receive_seq.sv"
+        `include "fd_single_data_mm_seq.sv"
+        `include "fd_multi_data_mm_seq.sv"
+        `include "fd_single_data_sm_seq.sv"
+        `include "fd_multi_data_sm_seq.sv"
+
+    endpackage
+`timescale 1ns/1ps;
+module tb ;
+import uvm_pkg::*;
+import test_pkg::*;
+
+///interface 
+ssp_if ssp_vif();
+// dut
+
+ssp_register dut_reg(
+    .PCLK(ssp_vif.PCLK),
+    .PRESETn(ssp_vif.PRESETn),
+    .PSEL(ssp_vif.PSEL),
+    .PENABLE(ssp_vif.PENABLE),
+    .PWRITE(ssp_vif.PWRITE),
+    .PADDR(ssp_vif.PADDR),
+    .PWDATA(ssp_vif.PWDATA),
+    .PRDATA(ssp_vif.PRDATA)
+    );
+// PCLK INTI
+initial begin
+    ssp_vif.PCLK = 0;
+    forever #10 ssp_vif.PCLK = ~ssp_vif.PCLK ;
+end
+// PRESETn
+initial begin
+    ssp_vif.PRESETn = 0;
+    repeat(2) @(posedge ssp_vif.PCLK);
+    #1ps; ssp_vif.PRESETn = 1;
+end
+// TEST 
+initial begin
+    /** Set virtual interface to driver for control, learn detail in next session */
+    uvm_config_db#(virtual ssp_if)::set(null, "uvm_test_top", "ssp_vif",ssp_vif);
+    /** Start the UVM test */
+
+        // run_test( "apb_clock_test");
+        // run_test( "apb_reset_test");
+
+        // run_test( "default_value_test");
+        // run_test ("read_write_value_test");
+        //run_test( "reset_on_fly_test");
+
+         run_test( "hd_single_data_transmit_test");
+        // run_test( "hd_multi_data_transmit_test");
+
+        // run_test( "hd_single_data_receive_test");
+        // run_test( "hd_multi_data_receive_test");
+
+        // run_test( "fd_single_data_mm_test");
+        // run_test( "fd_multi_data_mm_test");
+
+        // run_test( "fd_single_data_sm_test");
+        // run_test( "fd_multi_data_sm_test");
+    #100000ns;
+    $finish;
+end
+
+endmodule
+class ssp_base_test extends uvm_test;
+    `uvm_component_utils (ssp_base_test)
+    ssp_environment ssp_env;
+    virtual ssp_if ssp_vif;
+    function new(string name="ssp_base_test", uvm_component parent); 
+        super.new(name, parent);
+    endfunction: new
+    virtual function void build_phase (uvm_phase phase); 
+        super.build_phase (phase); 
+        `uvm_info("build_phase", "Entered...", UVM_HIGH) 
+        if(!uvm_config_db#(virtual ssp_if)::get(this, "", "ssp_vif", ssp_vif)) 
+            `uvm_fatal (get_type_name(), $sformatf("Faile to get ssp_vif uvm_config_db")) 
+        ssp_env = ssp_environment::type_id::create("ssp_env", this); 
+        uvm_config_db#(virtual ssp_if)::set(this, "ssp_env", "ssp_vif", ssp_vif); 
+        `uvm_info("build_phase", "Exiting...", UVM_HIGH)
+    endfunction: build_phase
+    virtual function void start_of_simulation_phase (uvm_phase phase);
+        `uvm_info("start_of_simulation_phase", "Entered...", UVM_HIGH)
+            uvm_top.print_topology(); 
+        `uvm_info("start_of_simulation_phase", "Exiting...", UVM_HIGH)
+    endfunction : start_of_simulation_phase
+
+endclass
+package test_pkg;    
+    import uvm_pkg::*;
+    `include "uvm_macros.svh"
+    import ssp_pkg::*;
+    import seq_pkg::*;
+    import test_pkg::*;
+        `include "ssp_base_test.sv"
+
+        `include "apb_clock_test.sv"
+        `include "apb_reset_test.sv"
+        `include "default_value_test.sv"
+        `include "read_write_value_test.sv"
+        `include "reset_on_fly_test.sv"
+
+        `include "hd_single_data_transmit_test.sv"
+        `include "hd_multi_data_transmit_test.sv"
+        `include "hd_single_data_receive_test.sv"
+        `include "hd_multi_data_receive_test.sv"
+        `include "fd_single_data_mm_test.sv"
+        `include "fd_multi_data_mm_test.sv"
+        `include "fd_single_data_sm_test.sv"
+        `include "fd_multi_data_sm_test.sv"
+endpackage
