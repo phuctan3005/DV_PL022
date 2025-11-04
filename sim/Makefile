@@ -1,14 +1,13 @@
 #========================
 # Define variables
 #========================
-TESTNAME ?= tb
 TB_NAME  ?= tb
 RADIX    ?= hexadecimal
 SEED     ?= 1
 UVM_LIB ?= uvm_lib
 VERBOSITY ?= HIGH
-#QUESTA_HOME ?= E:/FPT/QUESTA
-#UVM_HOME ?= $(QUESTA_HOME)/verilog_src/uvm_1_1d/src
+QUESTA_HOME ?= C:/questasim64_2024.1
+UVM_HOME ?= $(QUESTA_HOME)/verilog_src/uvm-1.1d/src
 #========================
 # Default target
 #========================
@@ -37,12 +36,11 @@ run:
 	vsim -L $(UVM_LIB) \
 	     -sv_seed $(SEED) \
 	     -debugDB \
-	     -l $(TESTNAME).log \
+	     -l simulation.log \
 	     -voptargs=+acc \
 	     -assertdebug \
 	     -c $(TB_NAME) \
 	     -do "log -r /*; run -all;" \
-	     +$(TESTNAME) \
 	     +UVM_VERBOSITY=$(VERBOSITY)
 
 #========================
@@ -55,19 +53,24 @@ wave:
 # Run simulation with GUI
 #========================
 gui:
-	vsim -sv_seed $(SEED) -debugDB -l $(TESTNAME).log -voptargs=+acc -assertdebug $(TB_NAME) -do "log -r /*;add wave -r /*;run -all;" +$(TESTNAME)
+	vsim -sv_seed $(SEED) -debugDB -l simulation.log -voptargs=+acc -assertdebug $(TB_NAME) -do "log -r /*;add wave -r /*;run -all;"
 # Clean (Windows)
 #========================
 #-del /Q /F *.ini >nul 2>&1
-clean:
-	-del /Q /F work >nul 2>&1
-	-rmdir /S /Q work >nul 2>&1
-	-del /Q /F vsim.dbg >nul 2>&1
-	-del /Q /F *.ini >nul 2>&1
-	-del /Q /F *.log >nul 2>&1
-	-del /Q /F *.wlf >nul 2>&1
-	-del /Q /F transcript >nul 2>&1
+# clean:
+# 	-del /Q /F work >nul 2>&1
+# 	-rmdir /S /Q work >nul 2>&1
+# 	-del /Q /F vsim.dbg >nul 2>&1
+# 	-del /Q /F *.ini >nul 2>&1
+# 	-del /Q /F *.log >nul 2>&1
+# 	-del /Q /F *.wlf >nul 2>&1
+# 	-del /Q /F transcript >nul 2>&1
 
+clean:
+	@echo "Cleaning..."
+	rm -f *.ini *.log *.wlf vsim.dbg transcript
+	rm -rf work $(UVM_LIB)
+	@echo "Done."
 #========================
 # Help
 #========================

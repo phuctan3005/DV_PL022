@@ -16,5 +16,16 @@
         `include "fd_multi_data_mm_seq.sv"
         `include "fd_single_data_sm_seq.sv"
         `include "fd_multi_data_sm_seq.sv"
+        `include "tx_interrupt_seq.sv"
+        `include "rx_interrupt_seq.sv"
+        `include "rx_o_interrupt_seq.sv"
+        `include "rx_t_interrupt_seq.sv"
+        `include "main_interrupt_seq.sv"
+        `include "dma_tx_single_req_seq.sv"
+        `include "dma_rx_single_req_seq.sv"
+        `include "dma_tx_brust_req_seq.sv"
+        `include "dma_rx_brust_req_seq.sv"
+        `include "dma_clear_tx_req.sv"
+        `include "dma_clear_rx_req.sv"
 
     endpackage

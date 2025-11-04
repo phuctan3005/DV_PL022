@@ -19,9 +19,11 @@ class ssp_driver extends uvm_driver #(ssp_transaction) ;
             wait (ssp_vif.PRESETn == 1'b1);
             seq_item_port.get_next_item(req);
             driver(req);
-            $cast(rsp,req.clone());
-            rsp.set_id_info(req);
-            seq_item_port.put(rsp);
+
+            //chay interrupt tat 3 dong nay
+    //        $cast(rsp,req.clone());
+      //      rsp.set_id_info(req);
+        //    seq_item_port.put(rsp);
             seq_item_port.item_done();
         end
     endtask:run_phase

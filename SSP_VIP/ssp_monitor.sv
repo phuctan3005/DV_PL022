@@ -56,6 +56,9 @@ class ssp_monitor extends uvm_monitor;
             @(posedge ssp_vif.PCLK);#1ps;
             if (ssp_vif.PWRITE == 0) begin
                 trans.data = ssp_vif.PRDATA;
+                if (ssp_vif.PADDR == 12'h018) begin  // SSPMIS read
+                    `uvm_info(get_type_name(), $sformatf("Read SSPMIS: TX_INTR[1]=%0b, Full value=0x%0h", ssp_vif.PRDATA[1], ssp_vif.PRDATA), UVM_LOW)
+                end
             end
             `uvm_info(get_type_name(),$sformatf("Observed transaction : \n %s",trans.sprint()),UVM_LOW)
             monitor_port.write(trans);
